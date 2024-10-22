@@ -8,7 +8,7 @@ SERVER_ID = "server-1"
 
 # IP and Port of the Kafka bootstrap node
 #KAFKA_BOOTSTRAP_NODE = "kafka.${kafka.profile}:${kafka.port}"
-KAFKA_BOOTSTRAP_NODE = '10.2.1.5:9092'
+KAFKA_BOOTSTRAP_NODE = '10.2.1.5:9094'
 # Kafka topic which will get notified for websub topic registration/deregistration
 # All the hubs must be pointed to the same Kafka topic to notify websub topic registration/deregistration
 REGISTERED_WEBSUB_TOPICS_TOPIC = "registered-websub-topics"

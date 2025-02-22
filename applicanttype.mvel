@@ -30,29 +30,11 @@ String ByNaturalisation = "NAT";
 String ByRegistration = "CBREG";
 String ByArticleNine = "CUAN";
 
-String changeOfNameByOmittingOrAdding = "CNANN";
-String completeChangeOfName = "CCN";
-String changeOfNameMarriageOrDivorce = "CNRMD";
-String updateNameFromDocuments = "CNPBA";
-String changeNameByDeletingNicknames = "CNDNPT";
-String inclusionOrDeletionMaidenName = "IDMN";
-String changeToClarifyInitials = "CICI";
-String changeOrderOfNames = "CION";
-String changePlaceOfResidence = "CIPR";
-String changePlaceOfResidenceChild = "CIPRC";
-String correctionSpellingErrors = "CISNVS";
-String correctionPlaceOfOrigin = "CERPO";
-String correctionErrorNIN = "CERNIN";
-String correctionErrorParents = "CERPCC";
-String correctionPlaceOfOriginChild = "CERPOC";
-String changeInAge = "CIAGE";
-
-
 String fatherNIN;
 String motherNIN;
 
-String DATE_PATTERN = "yyyy/MM/dd";
-String regex = "^\\d{4}(\\/)(((0)[1-9])|((1)[0-2]))(\\/)([0-2][0-9]|(3)[0-1])$";
+String DATE_PATTERN = "dd/MM/yyyy";
+String regex = "^([0-2][0-9]|(3)[0-1])(\\/)(((0)[1-9])|((1)[0-2]))(\\/)(\\d{4})$";
 Pattern pattern = Pattern.compile(regex);
 
 def isUpdateFlow(identity) {
@@ -114,26 +96,6 @@ def getCitizenhipTypeCode(identity) {
     return null;
 }
 
-def getUserServiceTypeCop(identity) {
-    if (identity.containsKey('userServiceTypeCop')) {
-        Object val = identity.getOrDefault('userServiceTypeCop', null);
-        System.out.println("userServiceTypeCop: " + val);
-        return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
-    }
-	
-    return null;
-}
-
-def getUserServiceTypeCopCode(identity) {
-    if (identity.containsKey('userServiceTypeCopCode')) {
-        Object val = identity.getOrDefault('userServiceTypeCopCode', null);
-        System.out.println("userServiceTypeCopCode: " + val);
-        return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
-    }
-	
-    return null;
-}
-
 def getFatherNIN(identity) {
      if(identity.containsKey('fatherNIN')) {
         Object val = identity.getOrDefault('fatherNIN', null);
@@ -156,6 +118,16 @@ def getFoundLink( identity) {
         Object val = identity.getOrDefault("foundLink", null);
         return val == null ? false : (val instanceof String ? ; (val == "Y" ? true : false) : val);
     }
+    return false;
+}
+
+def getCOPServiceValue(identity, service) {
+    if (identity.containsKey(service)) {
+        Object val = identity.getOrDefault(service, null);
+        System.out.println(service + ": " + val);
+        return val == null ? false : (val instanceof String ? ; (val == "Y" ? true : false) : val);
+    }
+	
     return false;
 }
 
@@ -199,6 +171,24 @@ def getAgeCode(identity) {
    return ageGroup == null ? null : ageGroup;
 }
 
+def getAgeCop(identity) {
+    if(!identity.containsKey('dateOfBirthCop'))
+        return null;
+
+    String dobcop = identity.get('dateOfBirthCop');
+    if(!pattern.matcher(dobcop).matches())
+        return null;
+        
+    LocalDate date = LocalDate.parse(dobcop, DateTimeFormatter.ofPattern(DATE_PATTERN));
+    LocalDate currentDate = LocalDate.now(ZoneId.of("UTC"));
+    
+    if(date.isAfter(currentDate)) { return 'KER-MSD-151'; }
+    
+    int ageInYears = Period.between(date, currentDate).getYears();
+
+   return ageInYears == null ? null : ageInYears;
+}
+
 def getBioExceptionFlag(identity) {
     if(!identity.containsKey('isBioException')) { return false; }
     Object val = identity.getOrDefault('isBioException', null);
@@ -208,17 +198,29 @@ def getBioExceptionFlag(identity) {
 def getApplicantType() {
   String itc = getResidenceStatus(identity);
   String genderType = getGenderType(identity);
+  int ageCop = getAgeCop(identity);
   String ageCode = getAgeCode(identity);
   boolean isBioExPresent = getBioExceptionFlag(identity);
 
   String citizenshipType= getCitizenhipType(identity);
-  String userServiceTypeCop= getUserServiceTypeCop(identity);
-  String userServiceTypeCopCode= getUserServiceTypeCopCode(identity);
   String citizenshipTypeCode = getCitizenhipTypeCode(identity);
   String userCase= getUserCase(identity);
   String motherNIN= getMotherNIN(identity);
   String fatherNIN= getFatherNIN(identity);
   boolean foundLink=getFoundLink(identity);
+  boolean addingName= getCOPServiceValue(identity, 'addingName');
+  boolean removingName = getCOPServiceValue(identity, 'removingName');
+  boolean changeOrderOfNames= getCOPServiceValue(identity, 'changeOrderOfNames');
+  boolean completeChangeofName= getCOPServiceValue(identity, 'completeChangeofName');
+  boolean changeOfDateOfBirth = getCOPServiceValue(identity, 'changeOfDateOfBirth');
+  boolean changeInPlaceOfResidence = getCOPServiceValue(identity, 'changeInPlaceOfResidence');
+  boolean changeInPlaceOfBirth = getCOPServiceValue(identity, 'changeInPlaceOfBirth');
+  boolean changeInPlaceOfOrigin = getCOPServiceValue(identity, 'changeInPlaceOfOrigin');
+  boolean changeInCitizenshipType = getCOPServiceValue(identity, 'changeInCitizenshipType');
+  boolean addSpouse = getCOPServiceValue(identity, 'addSpouse');
+  boolean removeSpouse = getCOPServiceValue(identity, 'removeSpouse');
+  boolean changeDetailsOfFather = getCOPServiceValue(identity, 'changeDetailsOfFather');
+  boolean changeDetailsOfMother = getCOPServiceValue(identity, 'changeDetailsOfMother');
   if( ageCode == 'KER-MSD-151' ) { return "KER-MSD-151"; }
 
   
@@ -227,48 +229,52 @@ def getApplicantType() {
     return "001";
   }
  else if(userCase==FirstID){
-            return "707";
+            return "800";
   }
   else if(userCase==Update){
-    if(userServiceTypeCopCode==changeOfNameByOmittingOrAdding || userServiceTypeCop==changeOfNameByOmittingOrAdding){
-        return "700";
+	String result = "";
+    if(addingName || removingName || changeOrderOfNames || completeChangeofName){
+        result += "700,";
     }
-    else if(userServiceTypeCopCode==completeChangeOfName || userServiceTypeCop==completeChangeOfName){
-        return "701";
-    }
-    else if(userServiceTypeCopCode==changeOfNameMarriageOrDivorce || userServiceTypeCop==changeOfNameMarriageOrDivorce){
-        return "702";
-    }
-    else if(userServiceTypeCopCode==updateNameFromDocuments || userServiceTypeCop==updateNameFromDocuments){
-        return "703";
-    }
-    else if(userServiceTypeCopCode==changeNameByDeletingNicknames || userServiceTypeCop==changeNameByDeletingNicknames || userServiceTypeCopCode==changeToClarifyInitials || userServiceTypeCop==changeToClarifyInitials || userServiceTypeCopCode==changeOrderOfNames || userServiceTypeCop==changeOrderOfNames || userServiceTypeCopCode==correctionSpellingErrors || userServiceTypeCop==correctionSpellingErrors){
-        return "704";
-    }
-    else if(userServiceTypeCopCode==changePlaceOfResidence || userServiceTypeCop==changePlaceOfResidence || userServiceTypeCopCode==changePlaceOfResidenceChild || userServiceTypeCop==changePlaceOfResidenceChild){
-        return "705";
-    }
-    else if(userServiceTypeCopCode==correctionPlaceOfOrigin || userServiceTypeCop==correctionPlaceOfOrigin){
-        return "706";
-    }
-    else if(userServiceTypeCopCode==changeInAge || userServiceTypeCop==changeInAge){
-        return "708";
-    }
-    else if(userServiceTypeCopCode==inclusionOrDeletionMaidenName || userServiceTypeCop==inclusionOrDeletionMaidenName){
-        return "709";
-    }
-    else if(userServiceTypeCopCode==correctionErrorParents || userServiceTypeCop==correctionErrorParents){
-        return "710";
-    }
-    else if(userServiceTypeCopCode==correctionPlaceOfOriginChild || userServiceTypeCop==correctionPlaceOfOriginChild){
-        return "711";
-    }
-    else if(userServiceTypeCopCode==correctionErrorNIN || userServiceTypeCop==correctionErrorNIN){
-        return "712";
-    }
-    else{
-	 return "700";
-    }
+	if(changeOfDateOfBirth) {
+		result += "701,";
+	}
+	if(changeInPlaceOfResidence) {
+		result += "702,";
+	}
+	if(changeInPlaceOfBirth) {
+		if(ageCop > 17) {
+			result += "703,";
+		}
+		else {
+			result += "704,";
+		}
+	}
+	if(changeInPlaceOfOrigin) {
+		if(ageCop > 17) {
+			result += "705,";
+		}
+		else {
+			result += "706,";
+		}
+	}
+	if(changeInCitizenshipType) {
+		result += "707,";
+	}
+	if(addSpouse) {
+		result += "708,";
+	}
+	if(removeSpouse) {
+		result += "709,";
+	}
+	if(changeDetailsOfFather || changeDetailsOfMother) {
+		result += "710,";
+	}
+	if (result.endsWith(",")) {
+		result = result.substring(0, result.length() - 1);
+	}
+	
+	return result;
   }
   else if((citizenshipType==ByBirthIndigenousCommunity || citizenshipTypeCode == ByBirthIndigenousCommunity) && ageCode == ADULT && !(foundLink))
   {

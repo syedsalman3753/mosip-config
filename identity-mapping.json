@@ -7,7 +7,7 @@
 			"value": "zone,postalCode"
 		},
         "name": {
-            "value": "surname"
+             "value": "surname,surnameCop"
         },
         "fullName": {
             "value": "surname,givenName,otherNames,maidenName,previousName"

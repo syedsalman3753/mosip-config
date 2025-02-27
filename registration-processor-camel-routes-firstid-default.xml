@@ -194,29 +194,6 @@
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->demo-dedupe firstid route">
-      <from uri="eventbus://introducer-validator-firstid-bus-out" />
-      <log message="introducer-validator-->quality-classifier firstid route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://demo-dedupe-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
    <route id="quality-classifier-->legacy-data-valdiator firstid route">
       <from uri="eventbus://quality-classifier-firstid-bus-out" />
       <log message="quality-classifier-->biometric-authentication firstid route ${bodyAs(String)}" />
@@ -276,10 +253,6 @@
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
-		  <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
-            <to uri="eventbus://introducer-validator-bus-in" />
-         </when>
          <otherwise>
             <to uri="eventbus://demo-dedupe-bus-in" />
          </otherwise>
@@ -310,10 +283,6 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
-         </when>
-		 <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
-            <to uri="eventbus://verification-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://bio-dedupe-bus-in" />

@@ -282,6 +282,114 @@
     "spouseMarriageCertificateNumber": {
       "value": "spouseMarriageCertificateNumber"
     },
+	  "spouseTwoSurname": {
+      "value": "spouseTwoSurname"
+    },
+    "spouseTwoGivenName": {
+      "value": "spouseTwoGivenName"
+    },
+    "spouseTwoOtherNames": {
+      "value": "spouseTwoOtherNames"
+    },
+    "spouseTwoPreviousName": {
+      "value": "spouseTwoPreviousName"
+    },
+    "spouseTwoMaidenName": {
+      "value": "spouseTwoMaidenName"
+    },
+    "spouseTwoNIN": {
+      "value": "spouseTwoNIN"
+    },
+    "spouseTwoCitizenshipType": {
+      "value": "spouseTwoCitizenshipType"
+    },
+    "spouseTwoPlaceOfMarriage": {
+      "value": "spouseTwoPlaceOfMarriage"
+    },
+    "spouseTwoDateOfMarriage": {
+      "value": "spouseTwoDateOfMarriage"
+    },
+    "spouseTwoTypeOfMarriage": {
+      "value": "spouseTwoTypeOfMarriage"
+    },
+    "spouseTwoMarriageCertificateNumber": {
+      "value": "spouseTwoMarriageCertificateNumber"
+    },
+    "spouseThreeSurname": {
+      "value": "spouseThreeSurname"
+    },
+    "spouseThreeGivenName": {
+      "value": "spouseThreeGivenName"
+    },
+    "spouseThreeOtherNames": {
+      "value": "spouseThreeOtherNames"
+    },
+    "spouseThreePreviousName": {
+      "value": "spouseThreePreviousName"
+    },
+    "spouseThreeMaidenName": {
+      "value": "spouseThreeMaidenName"
+    },
+    "spouseThreeNIN": {
+      "value": "spouseThreeNIN"
+    },
+    "spouseThreeCitizenshipType": {
+      "value": "spouseThreeCitizenshipType"
+    },
+    "spouseThreePlaceOfMarriage": {
+      "value": "spouseThreePlaceOfMarriage"
+    },
+    "spouseThreeDateOfMarriage": {
+      "value": "spouseThreeDateOfMarriage"
+    },
+    "spouseThreeTypeOfMarriage": {
+      "value": "spouseThreeTypeOfMarriage"
+    },
+    "spouseThreeMarriageCertificateNumber": {
+      "value": "spouseThreeMarriageCertificateNumber"
+    },
+    "spouseFourSurname": {
+      "value": "spouseFourSurname"
+    },
+    "spouseFourGivenName": {
+      "value": "spouseFourGivenName"
+    },
+    "spouseFourOtherNames": {
+      "value": "spouseFourOtherNames"
+    },
+    "spouseFourPreviousName": {
+      "value": "spouseFourPreviousName"
+    },
+    "spouseFourMaidenName": {
+      "value": "spouseFourMaidenName"
+    },
+    "spouseFourNIN": {
+      "value": "spouseFourNIN"
+    },
+    "spouseFourCitizenshipType": {
+      "value": "spouseFourCitizenshipType"
+    },
+    "spouseFourPlaceOfMarriage": {
+      "value": "spouseFourPlaceOfMarriage"
+    },
+    "spouseFourDateOfMarriage": {
+      "value": "spouseFourDateOfMarriage"
+    },
+    "spouseFourTypeOfMarriage": {
+      "value": "spouseFourTypeOfMarriage"
+    },
+    "spouseFourMarriageCertificateNumber": {
+      "value": "spouseFourMarriageCertificateNumber"
+    },
+    "removeSpouseDateOfMarriage": {
+      "value": "removeSpouseDateOfMarriage"
+    },
+    "removeSpouseGivenName": {
+      "value": "removeSpouseGivenName"
+    },
+    "numberOfOtherSpouses": {
+      "value": "numberOfOtherSpouses"
+    },
     "otherSpouses": {
       "value": "otherSpouses"
     },

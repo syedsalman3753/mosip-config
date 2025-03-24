@@ -220,7 +220,11 @@
             <to uri="workflow-cmd://pause-and-request-additional-info" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'])]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['NIN_AVAILABILITY'] == 'true')]</jsonpath>
+            <to uri="eventbus://biometric-authentication-bus-in" />
+         </when>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['NIN_AVAILABILITY'] == 'false')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
          <when>
@@ -236,6 +240,29 @@
          </otherwise>
       </choice>
    </route>
+    <route id="biometric-authentication-stage-->bio-dedupe lost route">
+       <from uri="eventbus://biometric-authentication-lost-bus-out" />
+       <log message="biometric-authentication-stage-->bio-dedupe lost route ${bodyAs(String)}" />
+       <choice>
+          <when>
+             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+             <to uri="workflow-cmd://complete-as-failed" />
+             <to uri="workflow-cmd://anonymous-profile" />
+          </when>
+          <when>
+             <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+             <to uri="workflow-cmd://mark-as-reprocess" />
+          </when>
+          <when>
+             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+             <to uri="workflow-cmd://complete-as-rejected" />
+             <to uri="workflow-cmd://anonymous-profile" />
+          </when>
+          <otherwise>
+             <to uri="eventbus://bio-dedupe-bus-in" />
+          </otherwise>
+       </choice>
+    </route>
    <route id="bio-dedupe-lost-->uin-generation lost route">
       <from uri="eventbus://bio-dedupe-lost-bus-out" />
       <log message="bio-dedupe-->uin-generation lost route ${bodyAs(String)}" />
@@ -267,11 +294,11 @@
             <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
 		  <when>
-            <jsonpath suppressExceptions="true">$.[?( @['tags']['ID_OBJECT-inDepthCitizenshipVerification'] == 'Y'  )]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?( @['tags']['ID_OBJECT-inDepthCitizenshipVerification'] == 'Y' || @['tags']['ID_OBJECT-userServiceTypeReplacement'] == 'Lost' )]</jsonpath>
             <to uri="eventbus://mvs-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+              <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>

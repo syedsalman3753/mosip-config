@@ -1,668 +1,879 @@
 {
-    "identity": {
-        "IDSchemaVersion": {
-            "value": "IDSchemaVersion"
-        },
-        "locationHierarchyForProfiling": {
-			"value": "zone,postalCode"
-		},
-        "name": {
-             "value": "surname,surnameCop"
-        },
-        "fullName": {
-            "value": "surname,givenName,otherNames,maidenName,previousName"
-        },
-        "gender": {
-            "value": "gender"
-        },
-        "nrcId": {
-            "value": "dateOfBirth"
-        },
-        "dob": {
-            "value": "dateOfBirth"
-        },
-        "age": {
-            "value": "age"
-        },
-        "surname": {
-            "value": "surname"
-        },
-        "givenName": {
-            "value": "givenName"
-        },
-        "otherNames": {
-            "value": "otherNames"
-        },
-        "maidenName": {
-            "value": "maidenName"
-        },
-        "previousName": {
-            "value": "previousName"
-        },
-        "phone": {
-            "value": "phone"
-        },
-        "phone_number": {
-            "value": "phone"
-        },
-        "homePhoneNumber": {
-            "value": "homePhoneNumber"
-        },
-        "email": {
-            "value": "email"
-        },
-        "emailId": {
-            "value": "email"
-        },
-        "uin": {
-            "value": "UIN"
-        },
-        "vid": {
-            "value": "VID"
-        },
-        "NIN": {
-            "value": "NIN"
-        },
-
-"NIN_number_verified": { "value": "NINVerified"
-},
-"updated_at": { "value": "updatedAt"
-},
-"individual_id": {
-    "value": "individual_id"
- },
-"selectedHandles" : { "value" : "selectedHandles"
-},
-        "cardExpiryDate": {
-            "value": "cardExpiryDate"
-        },
-        "selectedHandles": {
-            "value": "selectedHandles"
-        },
-        "renewalNIN": {
-            "value": "renewalNIN"
-        },
-        "nextOfKinPhoneNumber": {
-            "value": "nextOfKinPhoneNumber"
-        },
-        "userCase": {
-            "value": "userCase"
-        },
-        "foundChildProofOfAdoption": {
-            "value": "foundChildProofOfAdoption"
-        },
-        "highestLevelOfEducation": {
-            "value": "highestLevelOfEducation"
-        },
-        "profession": {
-            "value": "profession"
-        },
-        "occupation": {
-            "value": "occupation"
-        },
-        "religion": {
-            "value": "religion"
-        },
-        "disabilities": {
-            "value": "disabilities"
-        },
-        "residenceStatus": {
-            "value": "residenceStatus"
-        },
-        "applicantPlaceOfResidence": {
-            "value": "applicantPlaceOfResidence"
-        },
-        "applicantPlaceOfResidenceDistrict": {
-            "value": "applicantPlaceOfResidenceDistrict"
-        },
-        "applicantPlaceOfResidenceCounty": {
-            "value": "applicantPlaceOfResidenceCounty"
-        },
-        "applicantPlaceOfResidenceSubCounty": {
-            "value": "applicantPlaceOfResidenceSubCounty"
-        },
-        "applicantPlaceOfResidenceParish": {
-            "value": "applicantPlaceOfResidenceParish"
-        },
-        "applicantPlaceOfResidenceVillage": {
-            "value": "applicantPlaceOfResidenceVillage"
-        },
-        "placeOfResidenceAddress": {
-            "value": "applicantPlaceOfResidenceDistrict,applicantPlaceOfResidenceCounty,applicantPlaceOfResidenceSubCounty,applicantPlaceOfResidenceParish,applicantPlaceOfResidenceVillage"
-        },
-        "applicantPlaceOfResidenceYearsLived": {
-            "value": "applicantPlaceOfResidenceYearsLived"
-        },
-        "applicantPlaceOfResidenceDistrictOfPrevRes": {
-            "value": "applicantPlaceOfResidenceDistrictOfPrevRes"
-        },
-        "applicantPlaceOfResidenceCountry": {
-            "value": "applicantPlaceOfResidenceCountry"
-        },
-        "applicantPlaceOfResidencePostalAddress": {
-            "value": "applicantPlaceOfResidencePostalAddress"
-        },
-        "sameAsPlaceOfResidenceCheckBox": {
-            "value": "sameAsPlaceOfResidenceCheckBox"
-        },
-        "applicantPlaceOfBirth": {
-            "value": "applicantPlaceOfBirth"
-        },
-        "applicantForiegnBirthCountry": {
-            "value": "applicantForiegnBirthCountry"
-        },
-        "applicantPlaceOfBirthDistrict": {
-            "value": "applicantPlaceOfResidenceDistrict"
-        },
-        "applicantPlaceOfBirthCounty": {
-            "value": "applicantPlaceOfResidenceCounty"
-        },
-        "applicantPlaceOfBirthSubCounty": {
-            "value": "applicantPlaceOfResidenceSubCounty"
-        },
-        "applicantPlaceOfBirthParish": {
-            "value": "applicantPlaceOfResidenceParish"
-        },
-        "applicantPlaceOfBirthVillage": {
-            "value": "applicantPlaceOfResidenceVillage"
-        },
-        "placeOfBirthAddress": {
-            "value": "applicantPlaceOfBirthDistrict,applicantPlaceOfBirthCounty,applicantPlaceOfBirthSubCounty,applicantPlaceOfBirthParish,applicantPlaceOfBirthVillage"
-        },
-		"userService": {
-            "value": "userService"
-        },
-		"userServiceType": {
-            "value": "userServiceType"
-        },
-"applicantCitizenshipType": {
-            "value": "userServiceType"
-        },
-        
-        "applicantPlaceOfOriginDistrict": {
-            "value": "applicantPlaceOfOriginDistrict"
-        },
-        "applicantPlaceOfOriginCounty": {
-            "value": "applicantPlaceOfOriginCounty"
-        },
-        "applicantPlaceOfOriginSubCounty": {
-            "value": "applicantPlaceOfOriginSubCounty"
-        },
-        "applicantPlaceOfOriginParish": {
-            "value": "applicantPlaceOfOriginParish"
-        },
-        "applicantPlaceOfOriginVillage": {
-            "value": "applicantPlaceOfOriginVillage"
-        },
-        "placeOfOriginAddress": {
-            "value": "applicantPlaceOfOriginDistrict,applicantPlaceOfOriginCounty,applicantPlaceOfOriginSubCounty,applicantPlaceOfOriginParish,applicantPlaceOfOriginVillage"
-        },
-        "applicantPlaceOfOriginIndigenousCommunityTribe": {
-            "value": "applicantPlaceOfOriginIndigenousCommunityTribe"
-        },
-        "applicantPlaceOfOriginClan": {
-            "value": "applicantPlaceOfOriginClan"
-        },
-        "preferredPollingStation": {
-            "value": "preferredPollingStation"
-        },
-        "pollingStationName": {
-            "value": "pollingStationName"
-        },
-        "maritalStatus": {
-            "value": "maritalStatus"
-        },
-        "spouseSurname": {
-            "value": "spouseSurname"
-        },
-        "spouseGivenName": {
-            "value": "spouseGivenName"
-        },
-        "spouseOtherNames": {
-            "value": "spouseOtherNames"
-        },
-        "spousePreviousName": {
-            "value": "spousePreviousName"
-        },
-        "spouseMaidenName": {
-            "value": "spouseMaidenName"
-        },
-        "spouseNIN": {
-            "value": "spouseNIN"
-        },
-        "spouseCitizenshipType": {
-            "value": "spouseCitizenshipType"
-        },
-        "spousePlaceOfMarriage": {
-            "value": "spousePlaceOfMarriage"
-        },
-        "spouseDateOfMarriage": {
-            "value": "spouseDateOfMarriage"
-        },
-        "spouseTypeOfMarriage": {
-            "value": "spouseTypeOfMarriage"
-        },
-        "spouseMarriageCertificateNumber": {
-            "value": "spouseMarriageCertificateNumber"
-        },
-        "otherSpouses": {
-            "value": "otherSpouses"
-        },
-        "otherSpousesDetails": {
-            "value": "otherSpousesDetails"
-        },
-        "fatherKnown": {
-            "value": "fatherKnown"
-        },
-        "fatherLivingStatus": {
-            "value": "fatherLivingStatus"
-        },
-        "fatherSurname": {
-            "value": "fatherSurname"
-        },
-        "fatherGiveName": {
-            "value": "fatherGiveName"
-        },
-        "fatherOtherNames": {
-            "value": "fatherOtherNames"
-        },
-        "fatherPreviousName": {
-            "value": "fatherPreviousName"
-        },
-        "fatherNIN": {
-            "value": "fatherNIN"
-        },
-        "fatherIDDocumentNo": {
-            "value": "fatherIDDocumentNo"
-        },
-        "fatherCitizenshipType": {
-            "value": "fatherCitizenshipType"
-        },
-        "fatherIndigenousCommunityTribe": {
-            "value": "fatherIndigenousCommunityTribe"
-        },
-        "fatherIndigenousCommunityClan": {
-            "value": "fatherIndigenousCommunityClan"
-        },
-        "fatherOccupation": {
-            "value": "fatherOccupation"
-        },
-        "fatherPlaceOfResidenceCountry": {
-            "value": "fatherPlaceOfResidenceCountry"
-        },
-        "fatherPlaceOfResidence": {
-            "value": "fatherPlaceOfResidence"
-        },
-        "fatherForiegnResidenceCountry": {
-            "value": "fatherForiegnResidenceCountry"
-        },
-        "fatherForiegnResidenceState": {
-            "value": "fatherForiegnResidenceState"
-        },
-        "fatherForiegnResidenceCity": {
-            "value": "fatherForiegnResidenceCity"
-        },
-        "fatherPlaceOfResidenceDistrict": {
-            "value": "fatherPlaceOfResidenceDistrict"
-        },
-        "fatherPlaceOfResidenceCounty": {
-            "value": "fatherPlaceOfResidenceCounty"
-        },
-        "fatherPlaceOfResidenceSubCounty": {
-            "value": "fatherPlaceOfResidenceSubCounty"
-        },
-        "fatherPlaceOfResidenceParish": {
-            "value": "fatherPlaceOfResidenceParish"
-        },
-        "fatherPlaceOfResidenceVillage": {
-            "value": "fatherPlaceOfResidenceVillage"
-        },
-        "fatherPlaceOfOrigin": {
-            "value": "fatherPlaceOfOrigin"
-        },
-        "fatherForiegnOriginCountry": {
-            "value": "fatherForiegnOriginCountry"
-        },
-        "fatherForiegnOriginState": {
-            "value": "fatherForiegnOriginState"
-        },
-        "fatherForiegnOriginCity": {
-            "value": "fatherForiegnOriginCity"
-        },
-        "fatherPlaceOfOriginCountry": {
-            "value": "fatherPlaceOfOriginCountry"
-        },
-        "sameAsFatherPlaceOfResidenceCheckBox": {
-            "value": "sameAsFatherPlaceOfResidenceCheckBox"
-        },
-        "fatherPlaceOfOriginDistrict": {
-            "value": "fatherPlaceOfOriginDistrict"
-        },
-        "fatherPlaceOfOriginCounty": {
-            "value": "fatherPlaceOfOriginCounty"
-        },
-        "fatherPlaceOfOriginSubCounty": {
-            "value": "fatherPlaceOfOriginSubCounty"
-        },
-        "fatherPlaceOfOriginParish": {
-            "value": "fatherPlaceOfOriginParish"
-        },
-        "fatherPlaceOfOriginVillage": {
-            "value": "fatherPlaceOfOriginVillage"
-        },
-        "motherKnown": {
-            "value": "motherKnown"
-        },
-        "motherLivingStatus": {
-            "value": "motherLivingStatus"
-        },
-        "motherSurname": {
-            "value": "motherSurname"
-        },
-        "motherGivenName": {
-            "value": "motherGivenName"
-        },
-        "motherOtherNames": {
-            "value": "motherOtherNames"
-        },
-        "motherPreviousName": {
-            "value": "motherPreviousName"
-        },
-        "motherNIN": {
-            "value": "motherNIN"
-        },
-        "motherIDDocumentNo": {
-            "value": "motherIDDocumentNo"
-        },
-        "motherIndigenousCommunityTribe": {
-            "value": "motherIndigenousCommunityTribe"
-        },
-        "motherIndigenousCommunityClan": {
-            "value": "motherIndigenousCommunityClan"
-        },
-        "motherOccupation": {
-            "value": "motherOccupation"
-        },
-        "motherPlaceOfResidenceDistrict": {
-            "value": "motherPlaceOfResidenceDistrict"
-        },
-        "motherPlaceOfResidenceCounty": {
-            "value": "motherPlaceOfResidenceCounty"
-        },
-        "motherPlaceOfResidenceSubCounty": {
-            "value": "motherPlaceOfResidenceSubCounty"
-        },
-        "motherPlaceOfResidenceParish": {
-            "value": "motherPlaceOfResidenceParish"
-        },
-        "motherPlaceOfResidenceVillage": {
-            "value": "motherPlaceOfResidenceVillage"
-        },
-        "motherPlaceOfOriginCountry": {
-            "value": "motherPlaceOfOriginCountry"
-        },
-        "sameAsMotherPlaceOfResidenceCheckBox": {
-            "value": "sameAsMotherPlaceOfResidenceCheckBox"
-        },
-        "motherPlaceOfOriginDistrict": {
-            "value": "motherPlaceOfOriginDistrict"
-        },
-        "motherPlaceOfOriginCounty": {
-            "value": "motherPlaceOfOriginCounty"
-        },
-        "motherPlaceOfOriginSubCounty": {
-            "value": "motherPlaceOfOriginSubCounty"
-        },
-        "motherPlaceOfOriginParish": {
-            "value": "motherPlaceOfOriginParish"
-        },
-        "motherPlaceOfOriginVillage": {
-            "value": "motherPlaceOfOriginVillage"
-        },
-        "guardianSurname": {
-            "value": "guardianSurname"
-        },
-        "guardianGivenName": {
-            "value": "guardianGivenName"
-        },
-        "guardianOtherNames": {
-            "value": "guardianOtherNames"
-        },
-        "guardianOccupation": {
-            "value": "guardianOccupation"
-        },
-        "guardianNIN_AIN": {
-            "value": "guardianNIN_AIN"
-        },
-        "guardianIDDocumentnumber": {
-            "value": "guardianIDDocumentnumber"
-        },
-        "guardianPassportNumber": {
-            "value": "guardianPassportNumber"
-        },
-        "guardianTribe": {
-            "value": "guardianTribe"
-        },
-        "guardianIntroductionLetter": {
-            "value": "guardianIntroductionLetter"
-        },
-        "guardianCitizenshipType": {
-            "value": "guardianCitizenshipType"
-        },
-        "guardianOtherNationality": {
-            "value": "guardianOtherNationality"
-        },
-        "guardianResidenceCountry": {
-            "value": "guardianResidenceCountry"
-        },
-        "guardianResidenceDistrict": {
-            "value": "guardianResidenceDistrict"
-        },
-        "guardianResidenceCounty": {
-            "value": "guardianResidenceCounty"
-        },
-        "guardianResidenceSubCounty": {
-            "value": "guardianResidenceSubCounty"
-        },
-        "guardianResidenceParish": {
-            "value": "guardianResidenceParish"
-        },
-        "guardianResidenceVillage": {
-            "value": "guardianResidenceVillage"
-        },
-        "guardianResidenceStreet": {
-            "value": "guardianResidenceStreet"
-        },
-        "declarant": {
-            "value": "declarant"
-        },
-        "declarantSurname": {
-            "value": "declarantSurname"
-        },
-        "declarantgivenName": {
-            "value": "declarantgivenName"
-        },
-        "declarantotherNames": {
-            "value": "declarantotherNames"
-        },
-        "declarantPreviousNames": {
-            "value": "declarantPreviousNames"
-        },
-        "declarantMaidenName": {
-            "value": "declarantMaidenName"
-        },
-        "declarantGender": {
-            "value": "declarantGender"
-        },
-        "declarantNationality": {
-            "value": "declarantNationality"
-        },
-        "declarantResidenceStatus": {
-            "value": "declarantResidenceStatus"
-        },
-        "declarantSupportDocuments": {
-            "value": "declarantSupportDocuments"
-        },
-        "declarantNIN": {
-            "value": "declarantNIN"
-        },
-        "declarantRole": {
-            "value": "declarantRole"
-        },
-        "PRN": {
-            "value": "PRN"
-        },
-        "requiresNewCard": {
-            "value": "requiresNewCard"
-        },
-        "introducerRID": {
-            "value": "introducerRID"
-        },
-        "introducerNIN": {
-            "value": "introducerNIN"
-        },
-        "introducerVID": {
-            "value": "introducerVID"
-        },
-        "introducerName": {
-            "value": "declarantSurname"
-        },
-        "individualBiometrics": {
-            "value": "individualBiometrics"
-        },
-        "introducerBiometrics": {
-            "value": "introducerBiometrics"
-        },
-        "individualAuthBiometrics": {
-            "value": "individualAuthBiometrics"
-        },
-        "officerBiometricFileName": {
-            "value": "officerBiometricFileName"
-        },
-        "supervisorBiometricFileName": {
-            "value": "supervisorBiometricFileName"
-        },
-        "preferredLanguage": {
-            "value": "preferredLang"
-        },
-        "location": {
-            "value": "applicantPlaceOfResidenceDistrict"
-        },
-        "location1": {
-            "value": "District"
-        },
-        "location2": {
-            "value": "County"
-        },
-        "location3": {
-            "value": "SubCounty"
-        },
-        "location4": {
-            "value": "Parish"
-        },
-        "location5": {
-            "value": "Village"
-        },
-        "location6": {
-            "value": "PollingStation"
-        },
-        "fullAddress": {
-            "value": "District,County,SubCounty,Parish,Village,PollingStation"
-        },
-        "bestTwoFingers": {
-            "value": "bestTwoFingers"
-        },
-        "birthdate": {
-            "value": "dateOfBirth"
-        },
-        "picture": {
-            "value": "face"
-        },
-        "address": {
-            "value": "District,County,SubCounty,Parish,Village,PollingStation"
-        },
-        "phone_number": {
-            "value": "phone"
-        },
-        "individual_id": {
-            "value": "individual_id"
-        },
-        "locality": {
-            "value": "District"
-        },
-        "region": {
-            "value": "County"
-        },
-        "country": {
-            "value": "SubCounty"
-        },
-		"foundLink": {
-            "value": "foundLink"
-        },
-		 "inDepthCitizenshipVerification": {
-            "value": "inDepthCitizenshipVerification"
-         }
+  "identity": {
+    "IDSchemaVersion": {
+      "value": "IDSchemaVersion"
     },
-    "metaInfo": {
-        "value": "metaInfo"
+    "locationHierarchyForProfiling": {
+      "value": "zone,postalCode"
     },
-    "audits": {
-        "value": "audits"
+    "name": {
+      "value": "surname,surnameCop"
     },
-    "documents": {
-         "poa": {
-            "value": "proofOfAddress"
-        },
-        "poi": {
-            "value": "proofOfIdentity"
-        },
-        "por": {
-            "value": "proofOfRelationship"
-        },
-        "pob": {
-            "value": "proofOfBirth"
-        },
-        "poadtn": {
-            "value": "proofOfAdoption"
-        },
-        "poc": {
-            "value": "proofOfCitizenship"
-        },
-        "poe": {
-            "value": "proofOfException"
-        },
-		"poosd": {
-            "value": "proofOfOtherSupportingdocumentIssuedbyGovt"
-        },
-		"posd": {
-            "value": "proofOfOtherSupportingDocuments"
-        },
-		"polsd": {
-            "value": "proofOfLegalStatutoryDeclaration"
-        },
-		"popf": {
-            "value": "proofOfPhysicalApplicationForm"
-        },
-		"poabd": {
-            "value": "proofOfAbandonment"
-        },
-		"pomc": {
-            "value": "proofOfModificationConsent"
-        },
-		"pos": {
-            "value": "applicantProofOfSignature"
-        },
-		"pois": {
-            "value": "introducerProofOfSignature"
-        },
-	    "poreg": {
-            "value": "proofOfRegistration"
-        }
+    "fullName": {
+      "value": "surname,givenName,otherNames,maidenName,previousName"
     },
-    "attributeUpdateCountLimit": {
-        "fullName": 2,
-        "gender": 1,
-        "dob": 1,
-        "age": 1
+    "gender": {
+      "value": "gender"
+    },
+    "nrcId": {
+      "value": "dateOfBirth"
+    },
+    "dob": {
+      "value": "dateOfBirth"
+    },
+    "age": {
+      "value": "age"
+    },
+    "surname": {
+      "value": "surname"
+    },
+    "givenName": {
+      "value": "givenName"
+    },
+    "otherNames": {
+      "value": "otherNames"
+    },
+    "maidenName": {
+      "value": "maidenName"
+    },
+    "previousName": {
+      "value": "previousName"
+    },
+    "phone": {
+      "value": "phone"
+    },
+    "phone_number": {
+      "value": "phone"
+    },
+    "homePhoneNumber": {
+      "value": "homePhoneNumber"
+    },
+    "email": {
+      "value": "email"
+    },
+    "emailId": {
+      "value": "email"
+    },
+    "uin": {
+      "value": "UIN"
+    },
+    "vid": {
+      "value": "VID"
+    },
+    "NIN": {
+      "value": "NIN"
+    },
+    "NIN_number_verified": {
+      "value": "NINVerified"
+    },
+    "updated_at": {
+      "value": "updatedAt"
+    },
+    "individual_id": {
+      "value": "individual_id"
+    },
+    "selectedHandles": {
+      "value": "selectedHandles"
+    },
+    "cardExpiryDate": {
+      "value": "cardExpiryDate"
+    },
+    "renewalNIN": {
+      "value": "renewalNIN"
+    },
+    "nextOfKinPhoneNumber": {
+      "value": "nextOfKinPhoneNumber"
+    },
+    "userCase": {
+      "value": "userCase"
+    },
+    "foundChildProofOfAdoption": {
+      "value": "foundChildProofOfAdoption"
+    },
+    "highestLevelOfEducation": {
+      "value": "highestLevelOfEducation"
+    },
+    "profession": {
+      "value": "profession"
+    },
+    "occupation": {
+      "value": "occupation"
+    },
+    "religion": {
+      "value": "religion"
+    },
+    "disabilities": {
+      "value": "disabilities"
+    },
+    "residenceStatus": {
+      "value": "residenceStatus"
+    },
+    "applicantPlaceOfResidence": {
+      "value": "applicantPlaceOfResidence"
+    },
+    "applicantPlaceOfResidenceDistrict": {
+      "value": "applicantPlaceOfResidenceDistrict"
+    },
+    "applicantPlaceOfResidenceCounty": {
+      "value": "applicantPlaceOfResidenceCounty"
+    },
+    "applicantPlaceOfResidenceSubCounty": {
+      "value": "applicantPlaceOfResidenceSubCounty"
+    },
+    "applicantPlaceOfResidenceParish": {
+      "value": "applicantPlaceOfResidenceParish"
+    },
+    "applicantPlaceOfResidenceVillage": {
+      "value": "applicantPlaceOfResidenceVillage"
+    },
+    "placeOfResidenceAddress": {
+      "value": "applicantPlaceOfResidenceDistrict,applicantPlaceOfResidenceCounty,applicantPlaceOfResidenceSubCounty,applicantPlaceOfResidenceParish,applicantPlaceOfResidenceVillage"
+    },
+    "applicantPlaceOfResidenceYearsLived": {
+      "value": "applicantPlaceOfResidenceYearsLived"
+    },
+    "applicantPlaceOfResidenceStreet": {
+      "value": "applicantPlaceOfResidenceStreet"
+    },
+    "applicantPlaceOfResidenceHouseNo": {
+      "value": "applicantPlaceOfResidenceHouseNo"
+    },
+    "applicantPlaceOfResidenceDistrictOfPrevRes": {
+      "value": "applicantPlaceOfResidenceDistrictOfPrevRes"
+    },
+    "applicantOriginPlace": {
+      "value": "applicantOriginPlace"
+    },
+    "applicantBirthPlace": {
+      "value": "applicantBirthPlace"
+    },
+    "applicantPlaceOfResidenceCountry": {
+      "value": "applicantPlaceOfResidenceCountry"
+    },
+    "applicantPlaceOfResidencePostalAddress": {
+      "value": "applicantPlaceOfResidencePostalAddress"
+    },
+    "appResCountryUGA": {
+      "value": "appResCountryUGA"
+    },
+    "applicantForeignResidenceCountry": {
+      "value": "applicantForeignResidenceCountry"
+    },
+    "applicantForeignResidenceAddress": {
+      "value": "applicantForeignResidenceAddress"
+    },
+    "applicantForeignBirthCountry": {
+      "value": "applicantForeignBirthCountry"
+    },
+    "applicantForeignBirthAddress": {
+      "value": "applicantForeignBirthAddress"
+    },
+    "appBirCountryUGA": {
+      "value": "appBirCountryUGA"
+    },
+    "sameAsPlaceOfResidenceCheckBox": {
+      "value": "sameAsPlaceOfResidenceCheckBox"
+    },
+    "applicantPlaceOfBirth": {
+      "value": "applicantPlaceOfBirth"
+    },
+    "applicantPlaceOfBirthDistrict": {
+      "value": "applicantPlaceOfBirthDistrict"
+    },
+    "applicantPlaceOfBirthCounty": {
+      "value": "applicantPlaceOfBirthCounty"
+    },
+    "applicantPlaceOfBirthSubCounty": {
+      "value": "applicantPlaceOfBirthSubCounty"
+    },
+    "applicantPlaceOfBirthParish": {
+      "value": "applicantPlaceOfBirthParish"
+    },
+    "applicantPlaceOfBirthVillage": {
+      "value": "applicantPlaceOfBirthVillage"
+    },
+    "applicantPlaceOfBirthCity": {
+      "value": "applicantPlaceOfBirthCity"
+    },
+    "applicantPlaceOfBirthHealthFacility": {
+      "value": "applicantPlaceOfBirthHealthFacility"
+    },
+    "placeOfBirthAddress": {
+      "value": "applicantPlaceOfBirthDistrict,applicantPlaceOfBirthCounty,applicantPlaceOfBirthSubCounty,applicantPlaceOfBirthParish,applicantPlaceOfBirthVillage"
+    },
+    "userService": {
+      "value": "userService"
+    },
+    "userServiceType": {
+      "value": "userServiceType"
+    },
+    "applicantCitizenshipType": {
+      "value": "userServiceType"
+    },
+    "applicantPlaceOfOriginDistrict": {
+      "value": "applicantPlaceOfOriginDistrict"
+    },
+    "applicantPlaceOfOriginCounty": {
+      "value": "applicantPlaceOfOriginCounty"
+    },
+    "applicantPlaceOfOriginSubCounty": {
+      "value": "applicantPlaceOfOriginSubCounty"
+    },
+    "applicantPlaceOfOriginParish": {
+      "value": "applicantPlaceOfOriginParish"
+    },
+    "applicantPlaceOfOriginVillage": {
+      "value": "applicantPlaceOfOriginVillage"
+    },
+    "placeOfOriginAddress": {
+      "value": "applicantPlaceOfOriginDistrict,applicantPlaceOfOriginCounty,applicantPlaceOfOriginSubCounty,applicantPlaceOfOriginParish,applicantPlaceOfOriginVillage"
+    },
+    "applicantPlaceOfOriginIndigenousCommunityTribe": {
+      "value": "applicantPlaceOfOriginIndigenousCommunityTribe"
+    },
+    "applicantPlaceOfOriginClan": {
+      "value": "applicantPlaceOfOriginClan"
+    },
+    "applicantForeignOriginCountry": {
+      "value": "applicantForeignOriginCountry"
+    },
+    "applicantForeignOriginAddress": {
+      "value": "applicantForeignOriginAddress"
+    },
+    "preferredPollingStation": {
+      "value": "preferredPollingStation"
+    },
+    "pollingStationName": {
+      "value": "pollingStationName"
+    },
+    "maritalStatus": {
+      "value": "maritalStatus"
+    },
+    "spouseSurname": {
+      "value": "spouseSurname"
+    },
+    "spouseGivenName": {
+      "value": "spouseGivenName"
+    },
+    "spouseOtherNames": {
+      "value": "spouseOtherNames"
+    },
+    "spousePreviousName": {
+      "value": "spousePreviousName"
+    },
+    "spouseMaidenName": {
+      "value": "spouseMaidenName"
+    },
+    "spouseNIN": {
+      "value": "spouseNIN"
+    },
+    "spouseCitizenshipType": {
+      "value": "spouseCitizenshipType"
+    },
+    "spousePlaceOfMarriage": {
+      "value": "spousePlaceOfMarriage"
+    },
+    "spouseDateOfMarriage": {
+      "value": "spouseDateOfMarriage"
+    },
+    "spouseTypeOfMarriage": {
+      "value": "spouseTypeOfMarriage"
+    },
+    "spouseMarriageCertificateNumber": {
+      "value": "spouseMarriageCertificateNumber"
+    },
+	  "spouseTwoSurname": {
+      "value": "spouseTwoSurname"
+    },
+    "spouseTwoGivenName": {
+      "value": "spouseTwoGivenName"
+    },
+    "spouseTwoOtherNames": {
+      "value": "spouseTwoOtherNames"
+    },
+    "spouseTwoPreviousName": {
+      "value": "spouseTwoPreviousName"
+    },
+    "spouseTwoMaidenName": {
+      "value": "spouseTwoMaidenName"
+    },
+    "spouseTwoNIN": {
+      "value": "spouseTwoNIN"
+    },
+    "spouseTwoCitizenshipType": {
+      "value": "spouseTwoCitizenshipType"
+    },
+    "spouseTwoPlaceOfMarriage": {
+      "value": "spouseTwoPlaceOfMarriage"
+    },
+    "spouseTwoDateOfMarriage": {
+      "value": "spouseTwoDateOfMarriage"
+    },
+    "spouseTwoTypeOfMarriage": {
+      "value": "spouseTwoTypeOfMarriage"
+    },
+    "spouseTwoMarriageCertificateNumber": {
+      "value": "spouseTwoMarriageCertificateNumber"
+    },
+    "spouseThreeSurname": {
+      "value": "spouseThreeSurname"
+    },
+    "spouseThreeGivenName": {
+      "value": "spouseThreeGivenName"
+    },
+    "spouseThreeOtherNames": {
+      "value": "spouseThreeOtherNames"
+    },
+    "spouseThreePreviousName": {
+      "value": "spouseThreePreviousName"
+    },
+    "spouseThreeMaidenName": {
+      "value": "spouseThreeMaidenName"
+    },
+    "spouseThreeNIN": {
+      "value": "spouseThreeNIN"
+    },
+    "spouseThreeCitizenshipType": {
+      "value": "spouseThreeCitizenshipType"
+    },
+    "spouseThreePlaceOfMarriage": {
+      "value": "spouseThreePlaceOfMarriage"
+    },
+    "spouseThreeDateOfMarriage": {
+      "value": "spouseThreeDateOfMarriage"
+    },
+    "spouseThreeTypeOfMarriage": {
+      "value": "spouseThreeTypeOfMarriage"
+    },
+    "spouseThreeMarriageCertificateNumber": {
+      "value": "spouseThreeMarriageCertificateNumber"
+    },
+    "spouseFourSurname": {
+      "value": "spouseFourSurname"
+    },
+    "spouseFourGivenName": {
+      "value": "spouseFourGivenName"
+    },
+    "spouseFourOtherNames": {
+      "value": "spouseFourOtherNames"
+    },
+    "spouseFourPreviousName": {
+      "value": "spouseFourPreviousName"
+    },
+    "spouseFourMaidenName": {
+      "value": "spouseFourMaidenName"
+    },
+    "spouseFourNIN": {
+      "value": "spouseFourNIN"
+    },
+    "spouseFourCitizenshipType": {
+      "value": "spouseFourCitizenshipType"
+    },
+    "spouseFourPlaceOfMarriage": {
+      "value": "spouseFourPlaceOfMarriage"
+    },
+    "spouseFourDateOfMarriage": {
+      "value": "spouseFourDateOfMarriage"
+    },
+    "spouseFourTypeOfMarriage": {
+      "value": "spouseFourTypeOfMarriage"
+    },
+    "spouseFourMarriageCertificateNumber": {
+      "value": "spouseFourMarriageCertificateNumber"
+    },
+    "removeSpouseDateOfMarriage": {
+      "value": "removeSpouseDateOfMarriage"
+    },
+    "removeSpouseGivenName": {
+      "value": "removeSpouseGivenName"
+    },
+    "numberOfOtherSpouses": {
+      "value": "numberOfOtherSpouses"
+    },
+    "otherSpouses": {
+      "value": "otherSpouses"
+    },
+    "otherSpousesDetails": {
+      "value": "otherSpousesDetails"
+    },
+    "fatherKnown": {
+      "value": "fatherKnown"
+    },
+    "fatherLivingStatus": {
+      "value": "fatherLivingStatus"
+    },
+    "fatherSurname": {
+      "value": "fatherSurname"
+    },
+    "fatherGiveName": {
+      "value": "fatherGiveName"
+    },
+    "fatherOtherNames": {
+      "value": "fatherOtherNames"
+    },
+    "fatherPreviousName": {
+      "value": "fatherPreviousName"
+    },
+    "fatherNIN": {
+      "value": "fatherNIN"
+    },
+    "fatherIDDocumentNo": {
+      "value": "fatherIDDocumentNo"
+    },
+    "fatherCitizenshipType": {
+      "value": "fatherCitizenshipType"
+    },
+    "fatherIndigenousCommunityTribe": {
+      "value": "fatherIndigenousCommunityTribe"
+    },
+    "fatherIndigenousCommunityClan": {
+      "value": "fatherIndigenousCommunityClan"
+    },
+    "fatherOccupation": {
+      "value": "fatherOccupation"
+    },
+    "fatherForeignResidenceCountry": {
+      "value": "fatherForeignResidenceCountry"
+    },
+	"fatherForeignResidenceAddress": {
+      "value": "fatherForeignResidenceAddress"
+    },
+    "fatherPostalAddress": {
+      "value": "fatherPostalAddress"
+    },
+    "fatherPlaceOfResidenceCountry": {
+      "value": "fatherPlaceOfResidenceCountry"
+    },
+    "fatherPlaceOfResidence": {
+      "value": "fatherPlaceOfResidence"
+    },
+    "fatherForiegnResidenceCountry": {
+      "value": "fatherForiegnResidenceCountry"
+    },
+    "fatherForiegnResidenceState": {
+      "value": "fatherForiegnResidenceState"
+    },
+    "fatherForiegnResidenceCity": {
+      "value": "fatherForiegnResidenceCity"
+    },
+    "fatherPlaceOfResidenceDistrict": {
+      "value": "fatherPlaceOfResidenceDistrict"
+    },
+    "fatherPlaceOfResidenceCounty": {
+      "value": "fatherPlaceOfResidenceCounty"
+    },
+    "fatherPlaceOfResidenceSubCounty": {
+      "value": "fatherPlaceOfResidenceSubCounty"
+    },
+    "fatherPlaceOfResidenceParish": {
+      "value": "fatherPlaceOfResidenceParish"
+    },
+    "fatherPlaceOfResidenceVillage": {
+      "value": "fatherPlaceOfResidenceVillage"
+    },
+    "fatResCountryUGA": {
+      "value": "fatResCountryUGA"
+    },
+    "fatherPlaceOfOrigin": {
+      "value": "fatherPlaceOfOrigin"
+    },
+    "fatherForiegnOriginCountry": {
+      "value": "fatherForiegnOriginCountry"
+    },
+    "fatherForiegnOriginState": {
+      "value": "fatherForiegnOriginState"
+    },
+    "fatherForiegnOriginCity": {
+      "value": "fatherForiegnOriginCity"
+    },
+    "fatherPlaceOfOriginCountry": {
+      "value": "fatherPlaceOfOriginCountry"
+    },
+    "sameAsFatherPlaceOfResidenceCheckBox": {
+      "value": "sameAsFatherPlaceOfResidenceCheckBox"
+    },
+    "fatherPlaceOfOriginDistrict": {
+      "value": "fatherPlaceOfOriginDistrict"
+    },
+    "fatherPlaceOfOriginCounty": {
+      "value": "fatherPlaceOfOriginCounty"
+    },
+    "fatherPlaceOfOriginSubCounty": {
+      "value": "fatherPlaceOfOriginSubCounty"
+    },
+    "fatherPlaceOfOriginParish": {
+      "value": "fatherPlaceOfOriginParish"
+    },
+    "fatherPlaceOfOriginVillage": {
+      "value": "fatherPlaceOfOriginVillage"
+    },
+    "fatherPlaceOfResidenceStreet": {
+      "value": "fatherPlaceOfResidenceStreet"
+    },
+    "fatherPlaceOfResidenceHouseNo": {
+      "value": "fatherPlaceOfResidenceHouseNo"
+    },
+    "fatherForeignOriginAddress": {
+      "value": "fatherForeignOriginAddress"
+    },
+    "fatherForeignOriginCountry": {
+      "value": "fatherForeignOriginCountry"
+    },
+    "fatOriCountryUGA": {
+      "value": "fatOriCountryUGA"
+    },
+	"appOriCountryUGA": {
+      "value": "appOriCountryUGA"
+    },
+    "fatherResidence": {
+      "value": "fatherResidence"
+    },
+    "fatherOrigin": {
+      "value": "fatherOrigin"
+    },
+    "motherOrigin": {
+      "value": "motherOrigin"
+    },
+    "motherResidence": {
+      "value": "motherResidence"
+    },
+    "motherKnown": {
+      "value": "motherKnown"
+    },
+    "motherLivingStatus": {
+      "value": "motherLivingStatus"
+    },
+    "motherSurname": {
+      "value": "motherSurname"
+    },
+    "motherGivenName": {
+      "value": "motherGivenName"
+    },
+    "motherOtherNames": {
+      "value": "motherOtherNames"
+    },
+    "motherPreviousName": {
+      "value": "motherPreviousName"
+    },
+    "motherNIN": {
+      "value": "motherNIN"
+    },
+    "motherIDDocumentNo": {
+      "value": "motherIDDocumentNo"
+    },
+    "motherIndigenousCommunityTribe": {
+      "value": "motherIndigenousCommunityTribe"
+    },
+    "motherIndigenousCommunityClan": {
+      "value": "motherIndigenousCommunityClan"
+    },
+    "motherOccupation": {
+      "value": "motherOccupation"
+    },
+    "motherPlaceOfResidenceDistrict": {
+      "value": "motherPlaceOfResidenceDistrict"
+    },
+    "motherPlaceOfResidenceCounty": {
+      "value": "motherPlaceOfResidenceCounty"
+    },
+    "motherPlaceOfResidenceSubCounty": {
+      "value": "motherPlaceOfResidenceSubCounty"
+    },
+    "motherPlaceOfResidenceParish": {
+      "value": "motherPlaceOfResidenceParish"
+    },
+    "motherPlaceOfResidenceVillage": {
+      "value": "motherPlaceOfResidenceVillage"
+    },
+    "motherForeignResidenceCountry": {
+      "value": "motherForeignResidenceCountry"
+    },
+    "motherForeignResidenceAddress": {
+      "value": "motherForeignResidenceAddress"
+    },
+    "motherPlaceOfResidenceStreet": {
+      "value": "motherPlaceOfResidenceStreet"
+    },
+    "motherPlaceOfResidenceHouseNo": {
+      "value": "motherPlaceOfResidenceHouseNo"
+    },
+    "motherPostalAddress": {
+      "value": "motherPostalAddress"
+    },
+    "motResCountryUGA": {
+      "value": "motResCountryUGA"
+	},
+	"motOriCountryUGA": {
+      "value": "motOriCountryUGA"
+    },
+    "motherPlaceOfOriginCountry": {
+      "value": "motherPlaceOfOriginCountry"
+    },
+    "sameAsMotherPlaceOfResidenceCheckBox": {
+      "value": "sameAsMotherPlaceOfResidenceCheckBox"
+    },
+    "motherPlaceOfOriginDistrict": {
+      "value": "motherPlaceOfOriginDistrict"
+    },
+    "motherPlaceOfOriginCounty": {
+      "value": "motherPlaceOfOriginCounty"
+    },
+    "motherPlaceOfOriginSubCounty": {
+      "value": "motherPlaceOfOriginSubCounty"
+    },
+    "motherPlaceOfOriginParish": {
+      "value": "motherPlaceOfOriginParish"
+    },
+    "motherPlaceOfOriginVillage": {
+      "value": "motherPlaceOfOriginVillage"
+    },
+    "motherForeignOriginCountry": {
+      "value": "motherForeignOriginCountry"
+    },
+    "motherForeignOriginAddress": {
+      "value": "motherForeignOriginAddress"
+    },
+    "guardianSurname": {
+      "value": "guardianSurname"
+    },
+    "guardianGivenName": {
+      "value": "guardianGivenName"
+    },
+    "guardianOtherNames": {
+      "value": "guardianOtherNames"
+    },
+    "guardianOccupation": {
+      "value": "guardianOccupation"
+    },
+    "guardianNIN_AIN": {
+      "value": "guardianNIN_AIN"
+    },
+    "guardianIDDocumentnumber": {
+      "value": "guardianIDDocumentnumber"
+    },
+    "guardianPassportNumber": {
+      "value": "guardianPassportNumber"
+    },
+    "guardianTribe": {
+      "value": "guardianTribe"
+    },
+    "guardianIntroductionLetter": {
+      "value": "guardianIntroductionLetter"
+    },
+    "guardianCitizenshipType": {
+      "value": "guardianCitizenshipType"
+    },
+    "guardianOtherNationality": {
+      "value": "guardianOtherNationality"
+    },
+    "guardianResidenceCountry": {
+      "value": "guardianResidenceCountry"
+    },
+    "guardianResidenceDistrict": {
+      "value": "guardianResidenceDistrict"
+    },
+    "guardianResidenceCounty": {
+      "value": "guardianResidenceCounty"
+    },
+    "guardianResidenceSubCounty": {
+      "value": "guardianResidenceSubCounty"
+    },
+    "guardianResidenceParish": {
+      "value": "guardianResidenceParish"
+    },
+    "guardianResidenceVillage": {
+      "value": "guardianResidenceVillage"
+    },
+    "guardianResidenceStreet": {
+      "value": "guardianResidenceStreet"
+    },
+    "declarant": {
+      "value": "declarant"
+    },
+    "declarantSurname": {
+      "value": "declarantSurname"
+    },
+    "declarantgivenName": {
+      "value": "declarantgivenName"
+    },
+    "declarantotherNames": {
+      "value": "declarantotherNames"
+    },
+    "declarantPreviousNames": {
+      "value": "declarantPreviousNames"
+    },
+    "declarantMaidenName": {
+      "value": "declarantMaidenName"
+    },
+    "declarantGender": {
+      "value": "declarantGender"
+    },
+    "declarantNationality": {
+      "value": "declarantNationality"
+    },
+    "declarantResidenceStatus": {
+      "value": "declarantResidenceStatus"
+    },
+    "declarantSupportDocuments": {
+      "value": "declarantSupportDocuments"
+    },
+    "declarantNIN": {
+      "value": "declarantNIN"
+    },
+    "declarantRole": {
+      "value": "declarantRole"
+    },
+    "PRN": {
+      "value": "PRN"
+    },
+    "requiresNewCard": {
+      "value": "requiresNewCard"
+    },
+    "introducerRID": {
+      "value": "introducerRID"
+    },
+    "introducerNIN": {
+      "value": "introducerNIN"
+    },
+    "introducerVID": {
+      "value": "introducerVID"
+    },
+    "introducerName": {
+      "value": "declarantSurname"
+    },
+    "individualBiometrics": {
+      "value": "individualBiometrics"
+    },
+    "introducerBiometrics": {
+      "value": "introducerBiometrics"
+    },
+    "individualAuthBiometrics": {
+      "value": "individualAuthBiometrics"
+    },
+    "officerBiometricFileName": {
+      "value": "officerBiometricFileName"
+    },
+    "supervisorBiometricFileName": {
+      "value": "supervisorBiometricFileName"
+    },
+    "preferredLanguage": {
+      "value": "preferredLang"
+    },
+    "location": {
+      "value": "applicantPlaceOfResidenceDistrict"
+    },
+    "location1": {
+      "value": "District"
+    },
+    "location2": {
+      "value": "County"
+    },
+    "location3": {
+      "value": "SubCounty"
+    },
+    "location4": {
+      "value": "Parish"
+    },
+    "location5": {
+      "value": "Village"
+    },
+    "location6": {
+      "value": "PollingStation"
+    },
+    "fullAddress": {
+      "value": "District,County,SubCounty,Parish,Village,PollingStation"
+    },
+    "bestTwoFingers": {
+      "value": "bestTwoFingers"
+    },
+    "birthdate": {
+      "value": "dateOfBirth"
+    },
+    "picture": {
+      "value": "face"
+    },
+    "address": {
+      "value": "District,County,SubCounty,Parish,Village,PollingStation"
+    },
+    "locality": {
+      "value": "District"
+    },
+    "region": {
+      "value": "County"
+    },
+    "country": {
+      "value": "SubCounty"
+    },
+    "foundLink": {
+      "value": "foundLink"
+    },
+    "inDepthCitizenshipVerification": {
+      "value": "inDepthCitizenshipVerification"
+    },
+  	"userServiceTypeReplacement": {
+        "value": "userServiceTypeReplacement"
+      }
+  },
+  "metaInfo": {
+    "value": "metaInfo"
+  },
+  "audits": {
+    "value": "audits"
+  },
+  "documents": {
+    "poa": {
+      "value": "proofOfAddress"
+    },
+    "poi": {
+      "value": "proofOfIdentity"
+    },
+    "por": {
+      "value": "proofOfRelationship"
+    },
+    "pob": {
+      "value": "proofOfBirth"
+    },
+    "poadtn": {
+      "value": "proofOfAdoption"
+    },
+    "poc": {
+      "value": "proofOfCitizenship"
+    },
+    "poe": {
+      "value": "proofOfException"
+    },
+    "poosd": {
+      "value": "proofOfOtherSupportingdocumentIssuedbyGovt"
+    },
+    "posd": {
+      "value": "proofOfOtherSupportingDocuments"
+    },
+    "polsd": {
+      "value": "proofOfLegalStatutoryDeclaration"
+    },
+    "popf": {
+      "value": "proofOfPhysicalApplicationForm"
+    },
+    "poabd": {
+      "value": "proofOfAbandonment"
+    },
+    "pomc": {
+      "value": "proofOfModificationConsent"
+    },
+    "pos": {
+      "value": "applicantProofOfSignature"
+    },
+    "pois": {
+      "value": "introducerProofOfSignature"
+    },
+    "poreg": {
+      "value": "proofOfRegistration"
     }
+  },
+  "attributeUpdateCountLimit": {
+    "fullName": 2,
+    "gender": 1,
+    "dob": 1,
+    "age": 1
+  }
 }

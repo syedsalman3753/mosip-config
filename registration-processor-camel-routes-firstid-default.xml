@@ -235,9 +235,32 @@
          </otherwise>
       </choice>
    </route>
-    <route id="legacy-data-validator-stage-->demo-dedupe firstid route">
+   <route id="legacy-data-validator-stage-->biometric-authentication firstid route">
       <from uri="eventbus://legacy-data-validator-firstid-bus-out" />
       <log message="legacy-data-validator-stage-->biometric-authentication route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://biometric-authentication-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="biometric-authentication-stage-->demo-dedupe firstid route">
+      <from uri="eventbus://biometric-authentication-firstid-bus-out" />
+      <log message="biometric-authentication-stage-->demo-dedupe firstid route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

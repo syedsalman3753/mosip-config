@@ -66,7 +66,7 @@
       </choice>
    </route>
    <!-- Packet Validator to payment-validator Route -->
-   <route id="packet-validator-->payment-validatorlost route">
+   <route id="packet-validator-->payment-validator lost route">
       <from uri="eventbus://packet-validator-lost-bus-out" />
       <log message="packet-validator-->payment-validator lost route ${bodyAs(String)}" />
       <choice>
@@ -85,34 +85,11 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-             <to uri="eventbus://payment-validator-bus-in" />
+           <to uri="eventbus://packet-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
-     <route id="payment-validator-->packet-classifier lost route">
-  		<from uri="eventbus://payment-validator-lost-bus-out" />
-  		<log message="payment-validator-->packet-classifier lost route ${bodyAs(String)}" />
-  		<choice>
-  			 <when>
-             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-             <to uri="workflow-cmd://complete-as-failed" />
-             <to uri="workflow-cmd://anonymous-profile" />
-          </when>
-          <when>
-             <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-             <to uri="workflow-cmd://mark-as-reprocess" />
-          </when>
-          <when>
-             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-             <to uri="workflow-cmd://complete-as-failed" />
-             <to uri="workflow-cmd://anonymous-profile" />
-            </when>
-  			 <otherwise>
-  				<to uri="eventbus://packet-classifier-bus-in" />
-  			 </otherwise>
-  		</choice>
-      </route>
-   <!-- Packet classifier to Quality Classifier Route -->
+    <!-- Packet classifier to Quality Classifier Route -->
    <route id="packet-classifier-->cmd-validator lost route">
       <from uri="eventbus://packet-classifier-lost-bus-out" />
       <log message="packet-classifier-->cmd-validator lost route ${bodyAs(String)}" />
@@ -131,11 +108,38 @@
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
+		 <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['PRN_AVAILABILITY'] == 'true')]</jsonpath>
+              <to uri="eventbus://payment-validator-bus-in" />
+         </when>
          <otherwise>
             <to uri="eventbus://c-m-d-validator-bus-in" />
          </otherwise>
       </choice>
    </route> 
+     <route id="payment-validator-->cmd-validator lost route">
+ 		<from uri="eventbus://payment-validator-lost-bus-out" />
+ 		<log message="payment-validator-->cmd-validator lost route ${bodyAs(String)}" />
+ 		<choice>
+ 			 <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+           </when>
+ 			 <otherwise>
+ 				<to uri="eventbus://c-m-d-validator-bus-in" />
+ 			 </otherwise>
+ 		</choice>
+     </route>
    <route id="cmd-validator-->operator-validator lost route">
       <from uri="eventbus://c-m-d-validator-lost-bus-out" />
       <log message="cmd-validator-->operator-validator/supervisor-validator lost route ${bodyAs(String)}" />

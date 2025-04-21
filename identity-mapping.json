@@ -870,8 +870,11 @@
       "value": "introducerProofOfSignature"
     },
     "poreg": {
-      "value": "proofOfRegistration"
-    }
+            "value": "proofOfRegistration"
+    },
+    "ponid": {
+            "value": "proofOfNationalId"
+     }
   },
   "attributeUpdateCountLimit": {
     "fullName": 2,

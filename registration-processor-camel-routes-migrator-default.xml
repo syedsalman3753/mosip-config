@@ -486,8 +486,7 @@
          </otherwise>
       </choice>
    </route>
-   <!-- finalization to Printing Route -->
-   <route id="finalization route-->printing-stage migrator route">
+    <route id="finalization route-->printing-stage migrator route">
       <from uri="eventbus://finalization-migrator-bus-out" />
       <log message="finalization-->printing-stage route ${bodyAs(String)}" />
       <choice>
@@ -505,10 +504,38 @@
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
+		  <when>
+             <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-META_DATA-registrationType'] == 'UPDATE' || @['tags']['META_INFO-META_DATA-registrationType'] == 'RENEWAL' || @['tags']['META_INFO-META_DATA-registrationType'] == 'FIRSTID')]</jsonpath>
+           <to uri="eventbus://printing-bus-in" />
+          </when>
          <otherwise>
-           <to uri="workflow-cmd://complete-as-processed" />
-           <to uri="workflow-cmd://anonymous-profile" />
+            <to uri="workflow-cmd://complete-as-processed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
+     <route id="printing-stage--> migrator route">
+        <from uri="eventbus://printing-migrator-bus-out" />
+        <log message="printing-stage--> route ${bodyAs(String)}" />
+        <choice>
+           <when>
+              <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+              <to uri="workflow-cmd://complete-as-failed" />
+              <to uri="workflow-cmd://anonymous-profile" />
+           </when>
+           <when>
+              <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+              <to uri="workflow-cmd://mark-as-reprocess" />
+           </when>
+           <when>
+              <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+              <to uri="workflow-cmd://complete-as-failed" />
+              <to uri="workflow-cmd://anonymous-profile" />
+           </when>
+           <otherwise>
+              <to uri="workflow-cmd://complete-as-processed" />
+              <to uri="workflow-cmd://anonymous-profile" />
+           </otherwise>
+        </choice>
+     </route>
 </routes>

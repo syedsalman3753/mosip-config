@@ -30,6 +30,9 @@ String ByNaturalisation = "NAT";
 String ByRegistration = "CBREG";
 String ByArticleNine = "CUAN";
 
+String LostReplacement = "LOST";
+String DamagedReplacement = "DMG";
+
 String fatherNIN;
 String motherNIN;
 
@@ -68,6 +71,25 @@ def getUserCase(identity) {
           System.out.println("userCase" + val);
         return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
     }
+    return null;
+}
+
+def getReplacementType(identity) {
+     if(identity.containsKey('userServiceTypeReplacement')) {
+        Object val = identity.getOrDefault('userServiceTypeReplacement', null);
+          System.out.println("userServiceTypeReplacement" + val);
+        return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
+    }
+    return null;
+}
+
+def getReplacementTypeCode(identity) {
+    if (identity.containsKey('userServiceTypeReplacementCode')) {
+        Object val = identity.getOrDefault('userServiceTypeReplacementCode', null);
+        System.out.println("userServiceTypeReplacementCode: " + val);
+        return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
+    }
+	
     return null;
 }
 
@@ -205,6 +227,8 @@ def getApplicantType() {
   String citizenshipType= getCitizenhipType(identity);
   String citizenshipTypeCode = getCitizenhipTypeCode(identity);
   String userCase= getUserCase(identity);
+  String replacementTypeCode= getReplacementTypeCode(identity);
+  String replacementType= getReplacementType(identity);
   String motherNIN= getMotherNIN(identity);
   String fatherNIN= getFatherNIN(identity);
   boolean foundLink=getFoundLink(identity);
@@ -303,11 +327,15 @@ def getApplicantType() {
   else if(foundLink)
   {
     return "606";
-  } 
-  else if(userCase==Lost)
+  }  
+  else if(userCase==Lost && (replacementType == LostReplacement || replacementTypeCode == LostReplacement))
   {
     return "002";
-  }  
+  }
+  else if(userCase==Lost && (replacementType == DamagedReplacement || replacementTypeCode == DamagedReplacement))
+  {
+    return "035";
+  }	
   else if(userCase==Update  && fatherNIN==null && motherNIN==null && ageCode == CHILD  )
   {
    return "003";

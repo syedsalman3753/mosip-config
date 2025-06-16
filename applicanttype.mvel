@@ -233,6 +233,9 @@ def getApplicantType() {
   String fatherNIN= getFatherNIN(identity);
   boolean foundLink=getFoundLink(identity);
   boolean addingName= getCOPServiceValue(identity, 'addingName');
+  boolean addingNamesFromPreviousCertorDoc= getCOPServiceValue(identity, 'addingNamesFromPreviousCertorDoc');
+  boolean otherNameCorrections= getCOPServiceValue(identity, 'otherNameCorrections');
+  boolean changeInGender= getCOPServiceValue(identity, 'changeInGender');
   boolean removingName = getCOPServiceValue(identity, 'removingName');
   boolean changeOrderOfNames= getCOPServiceValue(identity, 'changeOrderOfNames');
   boolean completeChangeofName= getCOPServiceValue(identity, 'completeChangeofName');
@@ -257,42 +260,49 @@ def getApplicantType() {
   }
   else if(userCase==Update){
 	String result = "";
-    if(addingName || removingName || changeOrderOfNames || completeChangeofName){
-        result += "700,";
-    }
-	if(changeOfDateOfBirth) {
+    if(addingName || removingName){
+		result += "700,";
+	}
+	if(changeOrderOfNames || otherNameCorrections){
 		result += "701,";
 	}
-	if(changeInPlaceOfResidence) {
+	if(addingNamesFromPreviousCertorDoc){
 		result += "702,";
 	}
+	if(completeChangeofName){
+        result += "703,";
+    }
+	if(changeInGender) {
+		result += "704,";
+	}
+	if(changeOfDateOfBirth) {
+		result += "705,";
+	}
+	if(changeInPlaceOfResidence) {
+		result += "706,";
+	}
 	if(changeInPlaceOfBirth) {
-		if(ageCop > 17) {
-			result += "703,";
-		}
-		else {
-			result += "704,";
-		}
+		result += "707,";
 	}
 	if(changeInPlaceOfOrigin) {
 		if(ageCop > 17) {
-			result += "705,";
+			result += "708,";
 		}
 		else {
-			result += "706,";
+			result += "709,";
 		}
 	}
 	if(changeInCitizenshipType) {
-		result += "707,";
+		result += "710,";
 	}
 	if(addSpouse) {
-		result += "708,";
+		result += "711,";
 	}
 	if(removeSpouse) {
-		result += "709,";
+		result += "712,";
 	}
 	if(changeDetailsOfFather || changeDetailsOfMother) {
-		result += "710,";
+		result += "713,";
 	}
 	if (result.endsWith(",")) {
 		result = result.substring(0, result.length() - 1);
@@ -327,7 +337,7 @@ def getApplicantType() {
   else if(foundLink)
   {
     return "606";
-  }  
+  } 
   else if(userCase==Lost && (replacementType == LostReplacement || replacementTypeCode == LostReplacement))
   {
     return "002";

@@ -87,6 +87,12 @@
     "userCase": {
       "value": "userCase"
     },
+    "citizenshipTypeCop": {
+      "value": "citizenshipTypeCop"
+    },
+    "changeInCitizenshipType": {
+      "value": "changeInCitizenshipType"
+    },
     "foundChildProofOfAdoption": {
       "value": "foundChildProofOfAdoption"
     },
@@ -282,7 +288,7 @@
     "spouseMarriageCertificateNumber": {
       "value": "spouseMarriageCertificateNumber"
     },
-	  "spouseTwoSurname": {
+    "spouseTwoSurname": {
       "value": "spouseTwoSurname"
     },
     "spouseTwoGivenName": {
@@ -435,7 +441,7 @@
     "fatherForeignResidenceCountry": {
       "value": "fatherForeignResidenceCountry"
     },
-	"fatherForeignResidenceAddress": {
+    "fatherForeignResidenceAddress": {
       "value": "fatherForeignResidenceAddress"
     },
     "fatherPostalAddress": {
@@ -522,7 +528,7 @@
     "fatOriCountryUGA": {
       "value": "fatOriCountryUGA"
     },
-	"appOriCountryUGA": {
+    "appOriCountryUGA": {
       "value": "appOriCountryUGA"
     },
     "fatherResidence": {
@@ -602,8 +608,8 @@
     },
     "motResCountryUGA": {
       "value": "motResCountryUGA"
-	},
-	"motOriCountryUGA": {
+    },
+    "motOriCountryUGA": {
       "value": "motOriCountryUGA"
     },
     "motherPlaceOfOriginCountry": {
@@ -810,12 +816,12 @@
     "inDepthCitizenshipVerification": {
       "value": "inDepthCitizenshipVerification"
     },
-  	"userServiceTypeReplacement": {
-        "value": "userServiceTypeReplacement"
-      },
-  	"PRNId": {
-        "value": "PRNId"
-      }
+ 	"userServiceTypeReplacement": {
+       "value": "userServiceTypeReplacement"
+     },
+	 "PRNId": {
+            "value": "PRNId"
+        }
   },
   "metaInfo": {
     "value": "metaInfo"
@@ -870,11 +876,104 @@
       "value": "introducerProofOfSignature"
     },
     "poreg": {
-            "value": "proofOfRegistration"
+      "value": "proofOfRegistration"
     },
     "ponid": {
-            "value": "proofOfNationalId"
-     }
+      "value": "proofOfNationalId"
+    },
+    "pomed": {
+      "value": "proofOfMedRep"
+    },
+    "pobapp": {
+      "value": "proofOfBAP"
+    },
+    "poall": {
+      "value": "proofOfAll"
+    },
+    "polr": {
+      "value": "proofOfLegalReport"
+    },
+    "podmg": {
+      "value": "proofOfDamaged"
+    },
+    "ponot": {
+      "value": "proofOfNoticeOfIntension"
+    },
+	"podp": {
+      "value": "proofOfDeedPoll"
+    },
+	"pocid": {
+	  "value": "proofOfCID"
+    },
+	"poip": {
+      "value": "proofOfInterpol"
+    },
+	"pobc": {
+      "value": "proofOfBirthCert"
+    },
+	"poad": {
+      "value": "proofOfAcademic"
+    },
+	"popass": {
+      "value": "proofOfPassport"
+    },
+	"povot": {
+      "value": "proofOfVoters"
+    },
+	"podri": {
+      "value": "proofOfDriving"
+    },
+	"pobap": {
+      "value": "proofOfBaptism"
+    },
+	"poor": {
+      "value": "proofOfOtherRelevant"
+    },
+	"polcl": {
+      "value": "proofOfLC1Letter"
+    },
+	"posta": {
+      "value": "proofOfStatutory"
+    },
+	"polcv": {
+      "value": "proofOfLCV"
+    },
+	"porec": {
+      "value": "proofOfRecLetter"
+    },
+	"poos": {
+      "value": "proofOfOtherSupporting"
+    },
+	"postp": {
+      "value": "proofOfStaDecalrationByParent"
+    },
+	"ponr": {
+      "value": "proofOfBirthNotification"
+    },
+	"pocr": {
+      "value": "proofOfCbyReg"
+    },
+	"pocn": {
+      "value": "proofOfCbyNat"
+    },
+	"pocd": {
+      "value": "proofOfCbyDual"
+    },
+	"pomcert": {
+      "value": "proofOfMarCert"
+    },
+	"poda": {
+      "value": "proofOfDecAbsolute"
+    },
+	"podna": {
+      "value": "proofOfDNA"
+    },
+	"pobcbr": {
+      "value": "proofOfBirthCertBeforeReg"
+    },
+	"pocrep": {
+      "value": "proofOfCourtOrder"
+    }
   },
   "attributeUpdateCountLimit": {
     "fullName": 2,

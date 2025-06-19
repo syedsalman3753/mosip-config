@@ -368,9 +368,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="verification route-->uin-generator migrator route">
-      <from uri="eventbus://verification-migrator-bus-out" />
-      <log message="verification route-->uin-generator migrator route ${bodyAs(String)}" />
+   <route id="mvs route-->uin-generator migrator route">
+      <from uri="eventbus://mvs-migrator-bus-out" />
+      <log message="mvs route-->uin-generator migrator route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

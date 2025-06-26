@@ -821,7 +821,10 @@
      },
 	 "PRNId": {
             "value": "PRNId"
-        }
+        },
+	"isCardRequired": {
+            "value": "isCardRequired"
+        }  
   },
   "metaInfo": {
     "value": "metaInfo"

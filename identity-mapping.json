@@ -980,6 +980,9 @@
 	"poanid": {
       "value": "proofOfAppNationalID"
     },
+	"popnid": {
+      "value": "proofOfPNationalID"
+    },
 	"ponpbr": {
       "value": "proofOfNIDPBR"
     },

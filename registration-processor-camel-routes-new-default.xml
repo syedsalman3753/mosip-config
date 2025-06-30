@@ -381,6 +381,14 @@
              <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'ADULT'  || @['tags']['AGE_GROUP'] == 'MINOR')]</jsonpath>
            <to uri="eventbus://legacy-data-bus-in" />
           </when>
+	      <when>
+            <jsonpath suppressExceptions="true">$.[?( @['tags']['ID_OBJECT-inDepthCitizenshipVerification'] == 'Y'  )]</jsonpath>
+            <to uri="eventbus://mvs-bus-in" />
+         </when>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-applicantCitizenshipType'] == 'By Birth /Descent' &amp;&amp; @['tags']['ID_OBJECT-foundLink'] != 'Y' &amp;&amp; @['tags']['ID_OBJECT-inDepthCitizenshipVerification'] == 'N'  )]</jsonpath>
+            <to uri="eventbus://citizenship-verification-bus-in" />
+         </when>
          <otherwise>
               <to uri="eventbus://mvs-bus-in" />
          </otherwise>

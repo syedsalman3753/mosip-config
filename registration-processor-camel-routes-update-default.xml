@@ -574,7 +574,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
           <when>
-             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'ADULT' &amp;&amp;  @['tags']['isCardRequired'] == 'Yes')]</jsonpath>
+             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'ADULT' &amp;&amp;  @['tags']['ID_OBJECT-isCardRequired'] == 'Yes')]</jsonpath>
            <to uri="eventbus://printing-bus-in" />
           </when>
          <otherwise>

@@ -33,6 +33,10 @@ String ByArticleNine = "CUAN";
 String LostReplacement = "LOST";
 String DamagedReplacement = "DMG";
 
+String CopCitizenByDual = "CBDUA";
+String CopCitizenByNat = "CBNAT";
+String CopCitizenByReg = "CBREG";
+
 String fatherNIN;
 String motherNIN;
 
@@ -90,6 +94,23 @@ def getReplacementTypeCode(identity) {
         return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
     }
 	
+    return null;
+}
+def getcitizenshipTypeCop(identity) {
+     if(identity.containsKey('citizenshipTypeCop')) {
+        Object val = identity.getOrDefault('citizenshipTypeCop', null);
+          System.out.println("citizenshipTypeCop" + val);
+        return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
+    }
+    return null;
+}
+
+def getcitizenshipTypeCopCode(identity) {
+    if (identity.containsKey('citizenshipTypeCopCode')) {
+        Object val = identity.getOrDefault('citizenshipTypeCopCode', null);
+        System.out.println("citizenshipTypeCopCode: " + val);
+        return val == null ? null : (val instanceof String ? ; (String)val : (String) ((List)val).get(0).value);
+    }
     return null;
 }
 
@@ -226,6 +247,8 @@ def getApplicantType() {
 
   String citizenshipType= getCitizenhipType(identity);
   String citizenshipTypeCode = getCitizenhipTypeCode(identity);
+  String citizenshipTypeCop = getcitizenshipTypeCop(identity);
+  String citizenshipTypeCopCode = getcitizenshipTypeCopCode(identity);
   String userCase= getUserCase(identity);
   String replacementTypeCode= getReplacementTypeCode(identity);
   String replacementType= getReplacementType(identity);
@@ -292,8 +315,14 @@ def getApplicantType() {
 			result += "709,";
 		}
 	}
-	if(changeInCitizenshipType) {
+	if(changeInCitizenshipType && (citizenshipTypeCop == CopCitizenByDual || citizenshipTypeCopCode == CopCitizenByDual)) {
 		result += "710,";
+	}
+	if(changeInCitizenshipType && (citizenshipTypeCop == CopCitizenByNat || citizenshipTypeCopCode == CopCitizenByNat)) {
+		result += "714,";
+	}
+	if(changeInCitizenshipType && (citizenshipTypeCop == CopCitizenByReg || citizenshipTypeCopCode == CopCitizenByReg)) {
+		result += "715,";
 	}
 	if(addSpouse) {
 		result += "711,";

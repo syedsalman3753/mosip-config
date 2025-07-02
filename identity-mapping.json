@@ -387,6 +387,12 @@
     "spouseFourMarriageCertificateNumber": {
       "value": "spouseFourMarriageCertificateNumber"
     },
+    "addSpouse": {
+      "value": "addSpouse"
+    },
+    "removeSpouse": {
+      "value": "removeSpouse"
+    },
     "removeSpouseDateOfMarriage": {
       "value": "removeSpouseDateOfMarriage"
     },

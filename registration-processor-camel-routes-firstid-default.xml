@@ -253,6 +253,10 @@
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
+	<when>
+            <jsonpath>$.[?(@['onHold'] == true)]</jsonpath>
+	  <log message="On hold the packet" />
+         </when>
          <otherwise>
             <to uri="eventbus://biometric-authentication-bus-in" />
          </otherwise>

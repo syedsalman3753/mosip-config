@@ -399,6 +399,9 @@
     "removeSpouseGivenName": {
       "value": "removeSpouseGivenName"
     },
+    "removeSpouseSurname": {
+      "value": "removeSpouseSurname"
+    },
     "numberOfOtherSpouses": {
       "value": "numberOfOtherSpouses"
     },
